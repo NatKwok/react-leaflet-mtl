@@ -17,7 +17,8 @@ import wifi from "../components/data/wifi";
 import wifiFeature from "../components/features/wifi_feature";
 import mural from "../components/data/mural";
 import muralFeature from "../components/features/mural_feature";
-import wifipoint from "../components/features/pointToLayer.jsx";
+import wifipoint from "../components/features/wifipoint.jsx";
+import muralpoint from "../components/features/muralpoint";
 
 function Main() {
 
@@ -43,7 +44,7 @@ function Main() {
           <GeoJSON data={wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Murals">
-          <GeoJSON data={mural} onEachFeature={muralFeature}/>
+          <GeoJSON data={mural} onEachFeature={muralFeature} pointToLayer={muralpoint}/>
         </LayersControl.Overlay>
       </LayersControl>
     </MapContainer>
