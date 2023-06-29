@@ -26,6 +26,7 @@ function Main() {
       center={[45.5019, -73.5674]}
       zoom={11}
       scrollWheelZoom={false}
+      style={{height: "100vh"}}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
