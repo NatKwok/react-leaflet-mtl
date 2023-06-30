@@ -25,6 +25,7 @@
 .homepagebackground {
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
     background-image: url(../components/media/background.jpg);
     background-size: cover;
     padding-top: 50px;
