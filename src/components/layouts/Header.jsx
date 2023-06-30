@@ -4,9 +4,13 @@ import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
+
 function Header() {
+
+
   return (
     <div className="navbar">
+
       <div style={{ textAlign: "center" }}>
         <ButtonGroup variant="text" aria-label="text primary button group">
           <Button>
@@ -48,6 +52,7 @@ function Header() {
         
         </ButtonGroup>
       </div>
+
     </div>
   );
 }
