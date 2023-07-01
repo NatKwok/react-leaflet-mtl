@@ -37,7 +37,7 @@ function Main() {
         <LayersControl.Overlay name="Census SubDivisions">
           <GeoJSON data={CSD} onEachFeature={csdFeature} />
         </LayersControl.Overlay>
-        <LayersControl.Overlay name="Cycle Paths">
+        <LayersControl.Overlay checked name="Cycle Paths">
           <GeoJSON data={cycle_paths} onEachFeature={cycleFeature}/>
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Wifi HotSpots">
