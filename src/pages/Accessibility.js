@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MapContainer,
   TileLayer,
   GeoJSON,
-  LayersControl,
-  Marker,
+  LayersControl
 } from "react-leaflet";
 import "../App.css";
 import "leaflet/dist/leaflet.css";

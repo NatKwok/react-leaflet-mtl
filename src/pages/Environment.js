@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   MapContainer,
   TileLayer,
   GeoJSON,
   LayersControl,
-  Marker,
 } from "react-leaflet";
 import "../App.css";
 import "leaflet/dist/leaflet.css";
@@ -31,7 +30,7 @@ function env() {
         <LayersControl.Overlay name="Wetlands">
           <GeoJSON data={wetland} onEachFeature={wetlandFeature}/>
         </LayersControl.Overlay>
-        <LayersControl.Overlay name="Water Courses">
+        <LayersControl.Overlay checked name="Water Courses">
           <GeoJSON data={watercourse} onEachFeature={watercourseFeature}/>
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Wastelands">
