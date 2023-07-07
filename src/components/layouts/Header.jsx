@@ -49,7 +49,17 @@ function Header() {
             </NavLink>
           </Button>
 
-        
+          <Button>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "link-active" : "link-inactive"
+              }
+              to="/create"
+            >
+              {" "}
+              Create
+            </NavLink>
+          </Button>        
         </ButtonGroup>
       </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Marker, Popup, useMapEvents } from "react-leaflet";
 import "../App.css";
 import 'leaflet/dist/leaflet.css';
+import { latLng } from "leaflet";
 
 function LocationMarker() {
     const [position, setPosition] = useState(null)
