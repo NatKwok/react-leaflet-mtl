@@ -59,6 +59,11 @@ app.get("/cyclepaths", async(req, res) => {
     res.send(point);
 }); 
 
+app.get("/wifi", async(req, res) => { 
+    const point = await wifiModel.find();
+    res.send(point);
+}); 
+
 //Read Points
 app.get("/murals/:id", (req, res) => { 
 

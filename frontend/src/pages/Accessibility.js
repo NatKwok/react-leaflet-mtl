@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -7,19 +7,54 @@ import {
 } from "react-leaflet";
 import "../App.css";
 import "leaflet/dist/leaflet.css";
-import LocationMarker from "../components/LocationMarker";
-import CSD from "../components/data/csd";
-import csdFeature from "../components/features/csd_feature";
-import cycle_paths from "../components/data/cycle_paths";
 import cycleFeature from "../components/features/cycle_feature";
-import wifi from "../components/data/wifi";
 import wifiFeature from "../components/features/wifi_feature";
-import mural from "../components/data/mural";
 import muralFeature from "../components/features/mural_feature";
 import wifipoint from "../components/features/wifipoint.jsx";
 import muralpoint from "../components/features/muralpoint";
 
-function Main() {
+const Main = () =>  {
+
+  const [cycle_paths, setCyclePaths] = useState([]);
+  const [wifi, setWifi] = useState([]);
+    const [mural, setMural] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/cyclepaths')
+       .then((response) => response.json())
+       .then((data) => {
+          console.log(data);
+          setCyclePaths(data);
+       })
+       .catch((err) => {
+          console.log(err.message);
+       });
+ }, []);
+
+
+//  useEffect(() => {
+//   fetch('http://localhost:3001/wifi')
+//      .then((response) => response.json())
+//      .then((data) => {
+//         console.log(data);
+//         setWifi(data);
+//      })
+//      .catch((err) => {
+//         console.log(err.message);
+//      });
+// }, []);
+
+// useEffect(() => {
+//   fetch('http://localhost:3001/murals')
+//      .then((response) => response.json())
+//      .then((data) => {
+//         console.log(data);
+//         setMural(data);
+//      })
+//      .catch((err) => {
+//         console.log(err.message);
+//      });
+// }, []);
 
   return (
     <MapContainer
@@ -33,18 +68,15 @@ function Main() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <LayersControl position="topright">
-        <LayersControl.Overlay name="Census SubDivisions">
-          <GeoJSON data={CSD} onEachFeature={csdFeature} />
-        </LayersControl.Overlay>
         <LayersControl.Overlay checked name="Cycle Paths">
           <GeoJSON data={cycle_paths} onEachFeature={cycleFeature}/>
         </LayersControl.Overlay>
-        <LayersControl.Overlay name="Wifi HotSpots">
+        {/* <LayersControl.Overlay name="Wifi HotSpots">
           <GeoJSON data={wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Murals">
           <GeoJSON data={mural} onEachFeature={muralFeature} pointToLayer={muralpoint}/>
-        </LayersControl.Overlay>
+        </LayersControl.Overlay> */}
       </LayersControl>
     </MapContainer>
   );

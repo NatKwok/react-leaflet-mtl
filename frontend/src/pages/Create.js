@@ -2,8 +2,6 @@ import React from "react";
 import {
   MapContainer,
   TileLayer,
-  GeoJSON,
-  LayersControl
 } from "react-leaflet";
 import "../App.css";
 import "leaflet/dist/leaflet.css";
