@@ -16,7 +16,7 @@ import muralpoint from "../components/features/muralpoint";
 const Main = () =>  {
 
   const [cycle_paths, setCyclePaths] = useState([]);
-  const [wifi, setWifi] = useState([]);
+  const [Wifi, setWifi] = useState([]);
   const [mural, setMural] = useState([]);
 
   useEffect(() => {
@@ -32,12 +32,16 @@ const Main = () =>  {
 
  }, [])
 
+
 //  useEffect(() => {
 //   fetch('http://localhost:3001/wifi')
 //      .then((response) => response.json())
 //      .then((data) => {
 //         console.log(data);
-//         setWifi(data);
+//         setWifi({
+//           "type": "FeatureCollection",
+//           "features": [data]
+//         });
 //      })
 //      .catch((err) => {
 //         console.log(err.message);
@@ -72,7 +76,7 @@ const Main = () =>  {
           <GeoJSON data={cycle_paths} onEachFeature={cycleFeature}/>
         </LayersControl.Overlay>
         {/* <LayersControl.Overlay name="Wifi HotSpots">
-          <GeoJSON data={wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
+          <GeoJSON data={Wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
         </LayersControl.Overlay>
         <LayersControl.Overlay name="Murals">
           <GeoJSON data={mural} onEachFeature={muralFeature} pointToLayer={muralpoint}/>
