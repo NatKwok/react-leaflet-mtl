@@ -73,7 +73,7 @@ const Main = () =>  {
       />
       <LayersControl position="topright">
         <LayersControl.Overlay checked name="Cycle Paths">
-          <GeoJSON data={cycle_paths} onEachFeature={cycleFeature}/>
+          <GeoJSON data={cycle} onEachFeature={cycleFeature}/>
         </LayersControl.Overlay>
         {/* <LayersControl.Overlay name="Wifi HotSpots">
           <GeoJSON data={Wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
