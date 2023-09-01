@@ -17,7 +17,7 @@ const Main = () =>  {
 
   const [cycle_paths, setCyclePaths] = useState([]);
   const [wifi, setWifi] = useState([]);
-    const [mural, setMural] = useState([]);
+  const [mural, setMural] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3001/cyclepaths')
@@ -29,8 +29,8 @@ const Main = () =>  {
        .catch((err) => {
           console.log(err.message);
        });
- }, []);
 
+ }, [])
 
 //  useEffect(() => {
 //   fetch('http://localhost:3001/wifi')
