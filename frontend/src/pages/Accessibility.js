@@ -32,7 +32,6 @@ const Main = () =>  {
 
  }, [])
 
-
 //  useEffect(() => {
 //   fetch('http://localhost:3001/wifi')
 //      .then((response) => response.json())
@@ -73,7 +72,7 @@ const Main = () =>  {
       />
       <LayersControl position="topright">
         <LayersControl.Overlay checked name="Cycle Paths">
-          <GeoJSON data={cycle} onEachFeature={cycleFeature}/>
+          <GeoJSON data={cycle_paths} onEachFeature={cycleFeature}/>
         </LayersControl.Overlay>
         {/* <LayersControl.Overlay name="Wifi HotSpots">
           <GeoJSON data={Wifi} onEachFeature={wifiFeature} pointToLayer={wifipoint} />
